@@ -1,2 +1,8 @@
-node_modules
-npm-debug.log
+node_modules/
+files/
+*.log
+.DS_Store
+.env
+.git/
+.gitignore
+README.md
