@@ -21,6 +21,15 @@ app.use(cors());
 // `path.join(__dirname, "files")` constructs the absolute path to the files directory.
 app.use("/files", express.static(path.join(__dirname, "files")));
 
+// Health check endpoint
+app.get("/", (req, res) => {
+  res.json({ status: "ok", message: "YT Loop Backend is running" });
+});
+
+app.get("/health", (req, res) => {
+  res.json({ status: "ok", message: "YT Loop Backend is running" });
+});
+
 app.post("/process-audio", (req, res) => {
   const { url, loops, audioFormat = "mp3" } = req.body;
 
